@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useEventListener from '../useEventListener';
 // import useSafeState from '../useSafeState';
-import { isBrowser } from '../utils';
+import { isBrowser } from '../../helpers';
 
 type VisibilityProps = 'hidden' | 'visible' | undefined;
 

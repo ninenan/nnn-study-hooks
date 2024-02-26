@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { neverAny } from '@/types';
-import { getTarget } from '../utils';
+import { getTarget } from '../../helpers';
 
 export interface Options {
   root?: neverAny;

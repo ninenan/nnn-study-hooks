@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react';
+import { useState } from 'react';
 
 // 强制组件重新渲染，最终返回一个函数。
 // useReducer 写法

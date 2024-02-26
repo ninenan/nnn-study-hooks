@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { TFn } from '@/types';
-import useLatest from './useLatest';
+import useLatest from '../useLatest';
 
 function useUnmount(fn: TFn) {
   const fnRef = useLatest(fn);

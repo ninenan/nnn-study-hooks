@@ -1,7 +1,7 @@
 import { neverAny } from '@/types';
-import useCreation from './useCreation';
-import useLatest from './useLatest';
-import useUpdate from './useUpdate';
+import useCreation from '../useCreation';
+import useLatest from '../useLatest';
+import useUpdate from '../useUpdate';
 
 const observer = <T extends Record<string, neverAny>>(
   initialVal: T,

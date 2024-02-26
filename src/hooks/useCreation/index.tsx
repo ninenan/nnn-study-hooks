@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
 import type { DependencyList } from 'react';
+import { useRef } from 'react';
 
 // Object.is
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/is
