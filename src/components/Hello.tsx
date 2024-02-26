@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 interface IProps {
   message: string;
@@ -10,7 +10,7 @@ interface IProps {
 //   return <div>{message}</div>;
 // };
 
-const Hello: React.FC<PropsWithChildren<IProps>> = props => {
+const Hello: FC<PropsWithChildren<IProps>> = props => {
   const { message } = props;
 
   return <div>{message}</div>;
