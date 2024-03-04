@@ -1,51 +1,51 @@
-import { neverAny } from '@/types';
+import { NeverAny } from '@/types';
 
 export interface IConfigWayProps {
-  onFinish?: (value: neverAny) => void;
+  onFinish?: (value: NeverAny) => void;
   onReset?: () => void;
-  onFinishFailed?: (values: neverAny) => void;
+  onFinishFailed?: (values: NeverAny) => void;
 }
 
 export type NameProps = number | string;
 
 export interface IDataProps {
-  [key: string]: neverAny;
+  [key: string]: NeverAny;
 }
 
 export interface IUpdateAction {
   type: 'updateValue';
   name: NameProps;
-  value: neverAny;
+  value: NeverAny;
 }
 
 export interface IValidateAction {
-  type: 'validateValue';
+  type: 'validateField';
   name: NameProps;
 }
 
 export type ReducerAction = IUpdateAction | IValidateAction;
 
-export interface FormInstance {
-  registerField: (name: NameProps, updateChange: IDataProps) => void;
-  unRegisterField: (name: NameProps) => void;
-  getFieldValue: (name: NameProps) => neverAny;
-  dispatch: (action: ReducerAction) => void;
-  setConfigWays: (cb: IConfigWayProps) => void;
-  submit: (cb?: neverAny) => void;
-  resetFields: (cb?: () => void) => void;
-  getFieldValidate: (name: NameProps) => neverAny;
+export interface IFormInstance {
+  registerField: (name: NameProps, updateChange: IUpdateProps) => void; // 注册表单方法
+  unRegisterField: (name: NameProps) => void; // 卸载表单方法
+  getFieldValue: (name: NameProps) => NeverAny; // 获取对应的值
+  dispatch: (action: ReducerAction) => void; // 方法派发
+  setConfigWays: (cb: IConfigWayProps) => void; // 设置方法
+  submit: (cb?: NeverAny) => void; // 表单提交
+  resetFields: (cb?: () => void) => void; // 重置表单
+  getFieldValidate: (name: NameProps) => NeverAny; // 获取表单的验证项
 }
 
 export interface IValidateRulePorps {
   required?: boolean;
   message?: string;
-  rule?: RegExp | ((value: neverAny) => boolean);
+  rule?: RegExp | ((value: NeverAny) => boolean);
 }
 
 export interface IUpdateProps {
   message?: string;
   required?: boolean;
-  updateValue: neverAny;
+  updateValue: NeverAny;
   rules?: IValidateRulePorps[];
 }
 
@@ -54,7 +54,7 @@ export interface IUpdateChangeProps {
 }
 
 export interface IRulesPorps {
-  rule?: RegExp | ((val: neverAny) => boolean);
+  rule?: RegExp | ((val: NeverAny) => boolean);
   message?: string;
 }
 
@@ -69,5 +69,5 @@ export interface IValidateRuleListProps {
 }
 
 export interface IValidateRule {
-  [key: string]: IValidateRuleListProps[];
+  [key: string]: IValidateRuleListProps | null;
 }

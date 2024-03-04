@@ -1,9 +1,9 @@
-import { neverAny } from '@/types';
+import type { NeverAny } from '@/types';
 import { useCallback, useRef } from 'react';
 
 export default <
-  P extends neverAny[] = neverAny[],
-  V extends neverAny = neverAny
+  P extends NeverAny[] = NeverAny[],
+  V extends NeverAny = NeverAny
 >(
   cb: (...args: P) => Promise<V>
 ) => {

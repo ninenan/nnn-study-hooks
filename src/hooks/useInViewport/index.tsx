@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import { neverAny } from '@/types';
+import type { NeverAny } from '@/types';
 import { getTarget } from '../../helpers';
 
 export interface Options {
-  root?: neverAny;
+  root?: NeverAny;
   rootMargin?: string;
   threshold?: number | number[];
 }
 
 export interface Props {
-  target: neverAny;
+  target: NeverAny;
   options?: Options;
 }
 

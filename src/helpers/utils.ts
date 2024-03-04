@@ -1,4 +1,4 @@
-import type { TargetType, BasicTarget, neverAny } from '@/types';
+import type { TargetType, BasicTarget, NeverAny } from '@/types';
 
 export const NOOP = () => {
   // NOOP
@@ -14,7 +14,7 @@ export const isBrowser = !!(
 );
 
 export const getTarget = <T extends TargetType>(target: BasicTarget<T>) => {
-  let targetElement: neverAny;
+  let targetElement: NeverAny;
 
   if (!target) {
     targetElement = window;

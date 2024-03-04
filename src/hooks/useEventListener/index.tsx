@@ -1,17 +1,17 @@
-import { neverAny } from '@/types';
+import { NeverAny } from '@/types';
 import { useEffect } from 'react';
 import useLatest from '../useLatest';
 
 const useEventListener = (
   event: string,
-  handler: (...e: neverAny) => void,
-  target?: neverAny
+  handler: (...e: NeverAny) => void,
+  target?: NeverAny
 ) => {
   const handlerEl = useLatest(handler);
 
   useEffect(() => {
     // 支持 useRef 和 DOM 节点
-    let targetElement: neverAny;
+    let targetElement: NeverAny;
 
     if (!target) {
       targetElement = window;

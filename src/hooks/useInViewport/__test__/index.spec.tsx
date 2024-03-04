@@ -1,4 +1,4 @@
-import { neverAny } from '@/types';
+import type { NeverAny } from '@/types';
 import { act, renderHook } from '@testing-library/react';
 import useInViewport from '..';
 
@@ -8,7 +8,7 @@ describe('useInViewport test', () => {
   });
 
   let container: HTMLDivElement;
-  let mockIntersectionObserver: jest.Mock<neverAny, neverAny>;
+  let mockIntersectionObserver: jest.Mock<NeverAny, NeverAny>;
 
   beforeEach(() => {
     container = document.createElement('div');

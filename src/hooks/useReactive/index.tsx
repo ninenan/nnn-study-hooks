@@ -1,9 +1,9 @@
-import { neverAny } from '@/types';
+import type { NeverAny } from '@/types';
 import useCreation from '../useCreation';
 import useLatest from '../useLatest';
 import useUpdate from '../useUpdate';
 
-const observer = <T extends Record<string, neverAny>>(
+const observer = <T extends Record<string, NeverAny>>(
   initialVal: T,
   cb: () => void
 ): T => {
@@ -24,7 +24,7 @@ const observer = <T extends Record<string, neverAny>>(
 };
 
 // useReactive：一种具备响应式的 useState，用法与 useState 类似，但可以动态地设置值。
-function useReactive<T extends Record<string, neverAny>>(initialState: T): T {
+function useReactive<T extends Record<string, NeverAny>>(initialState: T): T {
   const ref = useLatest<T>(initialState);
   const update = useUpdate();
 

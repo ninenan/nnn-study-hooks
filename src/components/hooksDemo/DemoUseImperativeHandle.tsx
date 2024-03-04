@@ -1,8 +1,8 @@
 import { useRef, useImperativeHandle, useState } from 'react';
 import { Button } from 'nnn-toy-ui';
-import type { neverAny } from '@/types';
+import type { NeverAny } from '@/types';
 
-const Child = ({ cRef }: { cRef: neverAny }) => {
+const Child = ({ cRef }: { cRef: NeverAny }) => {
   const [count, setCount] = useState(0);
 
   const add = () => {
@@ -26,7 +26,7 @@ const Child = ({ cRef }: { cRef: neverAny }) => {
 };
 
 export default function DemoUseImperativeHandle() {
-  const childEl = useRef<neverAny>(null);
+  const childEl = useRef<NeverAny>(null);
   return (
     <div>
       <Button btnType="default" onClick={() => childEl.current.add()}>

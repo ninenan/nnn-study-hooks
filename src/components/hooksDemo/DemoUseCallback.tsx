@@ -1,9 +1,9 @@
 import { Button } from 'nnn-toy-ui';
-import React, { useState, useCallback, memo } from 'react';
+import { useState, useCallback, memo } from 'react';
 import { NOOP } from '@/helpers';
-import type { neverAny } from '@/types';
+import type { NeverAny } from '@/types';
 
-const TestBtn = memo(({ children, onClick = NOOP }: neverAny) => {
+const TestBtn = memo(({ children, onClick = NOOP }: NeverAny) => {
   console.log(children);
 
   return (

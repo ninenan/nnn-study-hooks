@@ -1,8 +1,8 @@
-import { neverAny } from '@/types';
+import type { NeverAny } from '@/types';
 import { Input } from 'nnn-toy-ui';
 import { useDeferredValue, useState } from 'react';
 
-const getList = (key: neverAny) => {
+const getList = (key: NeverAny) => {
   const arr = [];
 
   for (let index = 0; index < 10000; index++) {
