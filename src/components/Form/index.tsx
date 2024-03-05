@@ -1,5 +1,8 @@
-const Index = () => {
-  return <div>Index</div>;
-};
+import { NeverAny } from '@/types';
+import FormInit from './Form';
+import FormItem from './FormItem';
 
-export default Index;
+const Form: NeverAny = FormInit;
+Form.Item = FormItem;
+
+export default Form;

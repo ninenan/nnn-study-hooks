@@ -74,7 +74,7 @@ export default class FormStore {
   };
 
   // 获取对应的值
-  getFieldValue = (name: NameProps) => {
+  getFieldValue = (name?: NameProps) => {
     if (name) {
       return this.store[name];
     }

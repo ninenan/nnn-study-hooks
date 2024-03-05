@@ -28,7 +28,7 @@ export type ReducerAction = IUpdateAction | IValidateAction;
 export interface IFormInstance {
   registerField: (name: NameProps, updateChange: IUpdateProps) => void; // 注册表单方法
   unRegisterField: (name: NameProps) => void; // 卸载表单方法
-  getFieldValue: (name: NameProps) => NeverAny; // 获取对应的值
+  getFieldValue: (name?: NameProps) => NeverAny; // 获取对应的值
   dispatch: (action: ReducerAction) => void; // 方法派发
   setConfigWays: (cb: IConfigWayProps) => void; // 设置方法
   submit: (cb?: NeverAny) => void; // 表单提交
