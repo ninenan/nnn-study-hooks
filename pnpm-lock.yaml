@@ -32,6 +32,9 @@ dependencies:
   axios:
     specifier: ^0.27.2
     version: 0.27.2
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10

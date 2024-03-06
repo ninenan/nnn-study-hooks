@@ -1,5 +1,5 @@
 import { IValidateStatusProps } from '@/hooks/useForm/types';
-import  { FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 export interface IProps {
   label: string;
@@ -26,7 +26,18 @@ const Layout: FC<Partial<IProps>> = ({
         {toolitp && <span>{toolitp}</span>}
       </div>
       <div>{children}</div>
-      {status === 'rej' && <div style={{color: 'red', fontSize:12, lineHeight 22, pdding: '0 6px'}}>{message}</div> }
+      {status === 'rej' && (
+        <div
+          style={{
+            color: 'red',
+            fontSize: '12px',
+            lineHeight: '22px',
+            padding: '0 6px'
+          }}
+        >
+          {message}
+        </div>
+      )}
     </div>
   );
 };

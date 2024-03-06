@@ -16,7 +16,7 @@ export default class FormStore {
   store: IDataProps = {}; // 管理表单整体数据
   update_store: IUpdateChangeProps = {}; // 保存更新的对象
   initialValues: IDataProps = {}; // 保存初始值
-  configWay: IConfigWayProps = {}; // 对应的方法集合
+  configWays: IConfigWayProps = {}; // 对应的方法集合
   validateRule: IValidateRule = {}; // 校验表单的规则
   validateQueue: NeverAny[] = []; // 校验队列
 
@@ -52,7 +52,7 @@ export default class FormStore {
       return null;
     }
     // 抽出必填项
-    const requiredFlage = required || rules.find(v => v.required)?.required;
+    const requiredFlage = required || rules.find(v => v?.required)?.required;
     // 如果存在必填项则更新对应表单
     if (requiredFlage) {
       this.updateStoreField(name);
@@ -106,11 +106,13 @@ export default class FormStore {
       ...this.store,
       [name]: value
     };
+
+    this.updateStoreField(name);
   };
 
   // 设置方法
   setConfigWays = (configWays: IConfigWayProps) => {
-    this.configWay = configWays;
+    this.configWays = configWays;
   };
 
   // 更新对应的表单
@@ -131,6 +133,8 @@ export default class FormStore {
         errorList = [...errorList, { name, errors: data.message }];
       }
     });
+
+    return errorList;
   };
 
   // 集中表单验证
@@ -138,7 +142,7 @@ export default class FormStore {
     let flag = true;
     Object.keys(this.validateRule).forEach(name => {
       const status = this.validateFieldValue(name);
-      if (status && status === 'rej') {
+      if (status === 'rej') {
         flag = false;
       }
     });
@@ -177,7 +181,7 @@ export default class FormStore {
     });
 
     if (last_status !== status || last_message !== data.message) {
-      const validateUpdate = this.updateStoreField.bind((this, name));
+      const validateUpdate = this.updateStoreField.bind(this, name);
       this.validateQueue.push(validateUpdate);
     }
 
@@ -204,9 +208,10 @@ export default class FormStore {
   // 提交
   submit = (cb?: TNoop) => {
     const status = this.validateField();
-    const { onFinish, onFinishFailed } = this.configWay;
+    const { onFinish, onFinishFailed } = this.configWays;
 
     if (!status) {
+      console.log(11111);
       const errorFields = this.errorValidateFields();
       cb?.({ errorFields, values: this.store });
 
@@ -219,7 +224,7 @@ export default class FormStore {
 
   // 重置表单
   resetFields = (cb?: TFn) => {
-    const { onReset } = this.configWay;
+    const { onReset } = this.configWays;
     Object.keys(this.store).forEach(name => {
       // 重置表单时候，如果有初始值使用初始值
       this.initialValues[name]

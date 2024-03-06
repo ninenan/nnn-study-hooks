@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Button, Select, Input } from 'antd';
 import Form from '@/components/Form';
 import { IFormInstance } from '@/hooks/useForm/types';
@@ -7,21 +7,26 @@ import { NeverAny } from '@/types';
 const Index: React.FC = () => {
   const ref = useRef<IFormInstance>(null);
 
+  const onSubmit = () => {
+    console.log('onSubmit');
+  };
+
   return (
     <>
       <h1>自定义Form：</h1>
       <Form
-        initialValues={{ book: 'initialValues' }}
+        initialValues={{ book: '初始化book' }}
         ref={ref}
         onFinish={(data: NeverAny) => {
           console.log('表单数据:', data);
         }}
         onFinishFailed={(errorInfo: NeverAny) => {
-          console.log('Failed:', errorInfo);
+          console.log('onFinishFailed:', errorInfo);
         }}
         onReset={() => {
           console.log('重制表单成功');
         }}
+        onSubmit={onSubmit}
       >
         <Form.Item label="名称" name="book">
           <Input placeholder="请输入名称" />
@@ -60,7 +65,7 @@ const Index: React.FC = () => {
           name="rules3"
           rules={[
             {
-              rule: (v: any) => v.length > 5,
+              rule: (v: NeverAny) => v.length > 5,
               message: '输入要超过5个'
             }
           ]}
@@ -75,7 +80,7 @@ const Index: React.FC = () => {
           required
           rules={[
             {
-              rule: (v: any) => v.length < 5,
+              rule: (v: NeverAny) => v.length < 5,
               message: '输入不能超过5个'
             },
             { rule: /^[0-9]*$/, message: '请输入数字' }
@@ -124,11 +129,11 @@ const Index: React.FC = () => {
         </Button>
         <Button
           type="primary"
-          onClick={() =>
+          onClick={() => {
             ref.current?.submit((data: NeverAny) => {
-              console.log('ref提交按钮', data);
-            })
-          }
+              console.log('ref 提交按钮', data);
+            });
+          }}
           style={{ marginLeft: 8 }}
         >
           提交

@@ -41,13 +41,7 @@ const Form = (props: IProps, ref: NeverAny) => {
   } = formRef;
 
   // Form 可以通过使用 ref 操作实例
-  useImperativeHandle(
-    ref,
-    () => {
-      formRefInstance;
-    },
-    []
-  );
+  useImperativeHandle(ref, () => formRefInstance, []);
 
   formRef.setConfigWays({
     onFinish,

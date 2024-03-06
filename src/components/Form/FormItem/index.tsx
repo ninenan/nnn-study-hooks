@@ -45,7 +45,7 @@ const FormItem = (props: IFormItemProps) => {
       rules: props.rules,
       updateValue: () => update()
     };
-  }, []);
+  }, [contextValue, name]);
 
   useEffect(() => {
     name && registerField(name, updateChange);
