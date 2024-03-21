@@ -34,7 +34,7 @@ const usePropsValue = <T,>(options: Options<T>) => {
   const setState = (v: SetStateAction<T>, forceTrigger = false) => {
     const nextValue =
       typeof v === 'function'
-        ? (v as (prevState: T | undefined) => T)(stateRef.current)
+        ? (v as (prevState: T) => T)(stateRef.current!)
         : v;
 
     if (!forceTrigger && nextValue === stateRef.current) {
