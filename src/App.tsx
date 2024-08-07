@@ -26,7 +26,8 @@ import logo from './logo.svg';
 // import DemoUseDebounceFn from '@components/hooksDemo/DemoUseDebounceFn';
 // import DemoUseLockFn from '@components/hooksDemo/DemoUseLockFn';
 // import DemoForm from '@components/hooksDemo/DemoForm';
-import TestDemo from '@components/testDemo';
+// import TestDemo from '@components/testDemo';
+import DemoUseTimeout from '@components/hooksDemo/DemoUseTimeout';
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
         >
           Learn React
         </a>
-        <TestDemo />
+        <DemoUseTimeout />
       </header>
     </div>
   );
