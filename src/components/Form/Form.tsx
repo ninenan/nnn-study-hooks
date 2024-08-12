@@ -19,13 +19,9 @@ const Form = (props: IProps, ref: NeverAny) => {
   const {
     form,
     children,
-    onFinish = (data: NeverAny) => {
-      // NOOP
-    },
+    onFinish = NOOP,
     onReset = NOOP,
-    onFinishFailed = (error: NeverAny) => {
-      // NOOP
-    },
+    onFinishFailed = NOOP,
     initialValues = {},
     ...rest
   } = props;
@@ -33,9 +29,9 @@ const Form = (props: IProps, ref: NeverAny) => {
   const [formRef] = useForm(initialValues, form);
 
   const {
-    registerField,
-    unRegisterField,
-    dispatch,
+    // registerField,
+    // unRegisterField,
+    // dispatch,
     setConfigWays,
     ...formRefInstance
   } = formRef;
@@ -43,7 +39,7 @@ const Form = (props: IProps, ref: NeverAny) => {
   // Form 可以通过使用 ref 操作实例
   useImperativeHandle(ref, () => formRefInstance, []);
 
-  formRef.setConfigWays({
+  setConfigWays({
     onFinish,
     onReset,
     onFinishFailed
