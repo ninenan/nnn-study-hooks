@@ -211,7 +211,6 @@ export default class FormStore {
     const { onFinish, onFinishFailed } = this.configWays;
 
     if (!status) {
-      console.log(11111);
       const errorFields = this.errorValidateFields();
       cb?.({ errorFields, values: this.store });
 
