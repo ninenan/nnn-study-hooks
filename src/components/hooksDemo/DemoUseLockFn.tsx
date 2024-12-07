@@ -9,15 +9,15 @@ const mockRequest = async (count: number) => {
 };
 
 const DemoUseLockFn = () => {
-  const [count, setcount] = useState(0);
-  const [loading, setloading] = useState(false);
+  const [count, setCount] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const add = useLockFn(async num => {
-    setloading(true);
+    setLoading(true);
     const res = await mockRequest(count);
     console.log('res', res);
-    setloading(false);
-    setcount(v => v + num);
+    setLoading(false);
+    setCount(v => v + num);
   });
 
   return (

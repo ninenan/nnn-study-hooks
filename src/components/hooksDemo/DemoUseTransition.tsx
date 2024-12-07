@@ -2,7 +2,7 @@
 import React, { useState, useTransition } from 'react';
 import { Input } from 'nnn-toy-ui';
 
-function DemoUsetransition() {
+function DemoUseTransition() {
   const [isPending, startTransition] = useTransition();
   const [input, setInput] = useState('');
   const [list, setList] = useState<string[]>([]);
@@ -31,4 +31,4 @@ function DemoUsetransition() {
   );
 }
 
-export default DemoUsetransition;
+export default DemoUseTransition;

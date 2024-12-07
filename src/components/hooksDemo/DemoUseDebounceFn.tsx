@@ -4,16 +4,16 @@ import debounce from 'lodash/debounce';
 import useDebounceFn from '@/hooks/useDebounceFn';
 
 const DemoUseDebounceFn = () => {
-  const [count, setcount] = useState(0);
+  const [count, setCount] = useState(0);
 
-  const add = useDebounceFn(() => setcount(val => ++val), {
+  const add = useDebounceFn(() => setCount(val => ++val), {
     wait: 500,
     leading: true
   });
 
   // debounce 会返回新函数，需要使用 useCallback 包裹
   const add2 = useCallback(
-    debounce(() => setcount(val => ++val), 1000, {
+    debounce(() => setCount(val => ++val), 1000, {
       leading: true
     }),
     []
