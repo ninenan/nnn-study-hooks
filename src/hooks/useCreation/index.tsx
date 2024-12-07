@@ -22,13 +22,13 @@ function useCreation<T>(fn: () => T, deps: DependencyList) {
   const { current } = useRef({
     deps,
     obj: undefined as undefined | T,
-    initialzed: false
+    initialized: false
   });
 
-  if (current.initialzed === false || !depsAreSame(current.deps, deps)) {
+  if (current.initialized === false || !depsAreSame(current.deps, deps)) {
     current.deps = deps;
     current.obj = fn();
-    current.initialzed = true;
+    current.initialized = true;
   }
 
   return current.obj as T;
