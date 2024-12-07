@@ -12,18 +12,18 @@ const getVisibility = () => {
   return document.visibilityState;
 };
 const Index = (): VisibilityProps => {
-  // const [visiblity, setvisiblity] = useSafeState(() => getVisibility());
-  const [visiblity, setvisiblity] = useState(() => getVisibility());
+  // const [visibility, setVisibility] = useSafeState(() => getVisibility());
+  const [visibility, setVisibility] = useState(() => getVisibility());
 
   useEventListener(
     'visibilitychange',
     () => {
-      setvisiblity(getVisibility());
+      setVisibility(getVisibility());
     },
     document
   );
 
-  return visiblity;
+  return visibility;
 };
 
 export default Index;

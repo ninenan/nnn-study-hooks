@@ -17,7 +17,7 @@ afterAll(() => {
   jest.clearAllMocks();
 });
 
-describe('useDeocumentVisibility test', () => {
+describe('useDocumentVisibility test', () => {
   it('should be defined', () => {
     expect(useDocumentVisibility).toBeDefined();
   });

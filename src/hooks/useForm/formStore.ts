@@ -52,16 +52,16 @@ export default class FormStore {
       return null;
     }
     // 抽出必填项
-    const requiredFlage = required || rules.find(v => v?.required)?.required;
+    const requiredFlag = required || rules.find(v => v?.required)?.required;
     // 如果存在必填项则更新对应表单
-    if (requiredFlage) {
+    if (requiredFlag) {
       this.updateStoreField(name);
     }
 
     return {
       message,
       requiredMessage: message,
-      required: requiredFlage || false,
+      required: requiredFlag || false,
       status: 'pen', // 设置为等待（初始）状态
       rules: rules.filter(v => v?.rule) // 过滤掉有 required 的项
     };

@@ -57,7 +57,7 @@ export default <T,>(lists: T[], initialVal: T[] = []) => {
   );
 
   // 是否半选
-  const isPartialySelected = useCreation(
+  const isPartiallySelected = useCreation(
     () => !isNoneSelected && !isAllSelected,
     [isNoneSelected, isAllSelected]
   );
@@ -81,7 +81,7 @@ export default <T,>(lists: T[], initialVal: T[] = []) => {
     selected, // 已选元素组
     isSelected, // 是否被选中
     isAllSelected,
-    isPartialySelected,
+    isPartiallySelected,
     isNoneSelected,
     selectAdd,
     selectDel,

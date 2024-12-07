@@ -47,18 +47,18 @@ export default ({ targetDate, targetTime, onEnd, interval }: IOptions) => {
     }
   }, [targetTime, targetDate]);
 
-  const [remainTime, setremainTime] = useState(() => calcRemain(target));
+  const [remainTime, setRemainTime] = useState(() => calcRemain(target));
   const onEndRef = useLatest(onEnd);
 
   useEffect(() => {
-    if (!target) return setremainTime(0);
+    if (!target) return setRemainTime(0);
 
-    setremainTime(calcRemain(target));
+    setRemainTime(calcRemain(target));
 
     const timer = setInterval(() => {
       const remain = calcRemain(target);
 
-      setremainTime(remain);
+      setRemainTime(remain);
 
       if (remain === 0) {
         clearInterval(timer);

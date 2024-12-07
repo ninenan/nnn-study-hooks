@@ -36,7 +36,7 @@ export interface IFormInstance {
   getFieldValidate: (name: NameProps) => NeverAny; // 获取表单的验证项
 }
 
-export interface IValidateRulePorps {
+export interface IValidateRuleProps {
   required?: boolean;
   message?: string;
   rule?: RegExp | ((value: NeverAny) => boolean);
@@ -46,14 +46,14 @@ export interface IUpdateProps {
   message?: string;
   required?: boolean;
   updateValue: NeverAny;
-  rules?: IValidateRulePorps[];
+  rules?: IValidateRuleProps[];
 }
 
 export interface IUpdateChangeProps {
   [key: string]: IUpdateProps;
 }
 
-export interface IRulesPorps {
+export interface IRulesProps {
   rule?: RegExp | ((val: NeverAny) => boolean);
   message?: string;
 }
@@ -65,7 +65,7 @@ export interface IValidateRuleListProps {
   requiredMessage?: string;
   message: string;
   status: IValidateStatusProps;
-  rules: IRulesPorps[];
+  rules: IRulesProps[];
 }
 
 export interface IValidateRule {
