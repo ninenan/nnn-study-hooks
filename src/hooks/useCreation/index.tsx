@@ -3,7 +3,6 @@ import { useRef } from 'react';
 
 // Object.is
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-
 const depsAreSame = (olsDeps: DependencyList, deps: DependencyList) => {
   if (olsDeps === deps) return true;
 
