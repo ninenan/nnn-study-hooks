@@ -14,8 +14,8 @@ const observer = <T extends Record<string, NeverAny>>(
         ? observer(res, cb)
         : Reflect.get(target, key);
     },
-    set(tartget, key, val) {
-      const res = Reflect.set(tartget, key, val);
+    set(target, key, val) {
+      const res = Reflect.set(target, key, val);
       cb();
       return res;
     }
