@@ -11,6 +11,7 @@ const getVisibility = () => {
   }
   return document.visibilityState;
 };
+
 const Index = (): VisibilityProps => {
   // const [visibility, setVisibility] = useSafeState(() => getVisibility());
   const [visibility, setVisibility] = useState(() => getVisibility());
