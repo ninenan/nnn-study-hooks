@@ -17,7 +17,7 @@ const Hello: FC<PropsWithChildren<IProps>> = props => {
 };
 
 Hello.defaultProps = {
-  message: 'Hello wrold'
+  message: 'Hello word'
 };
 
 export default Hello;
