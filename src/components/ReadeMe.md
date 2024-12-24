@@ -1,3 +1,4 @@
+```typescriptreact
 import { FC, PropsWithChildren } from 'react';
 
 interface IProps {
@@ -21,3 +22,4 @@ Hello.defaultProps = {
 };
 
 export default Hello;
+```

@@ -13,10 +13,10 @@ export type Options<T> = {
 };
 
 const useUpdate = () => {
-  const [, setcount] = useState(0);
+  const [, setCount] = useState(0);
 
   return () => {
-    setcount(val => ++val);
+    setCount(val => ++val);
   };
 };
 
@@ -58,10 +58,10 @@ const Input: FC<Partial<IProps>> = props => {
 };
 
 const Index = () => {
-  const [value, setvalue] = useState('333');
+  const [value, setValue] = useState('333');
 
   const onChange = (val: string) => {
-    setvalue(val);
+    setValue(val);
   };
 
   return (
