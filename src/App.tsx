@@ -1,6 +1,5 @@
 import DemoHooks from '@/components/hooksDemo/DemoHooks';
 import './App.css';
-import Hello from './components/Hello';
 import logo from './logo.svg';
 // import DemoUseState from '@components/demo/DemoUseState';
 // import DemoUseEffect from '@components/demo/DemoUseEffect';
@@ -26,18 +25,24 @@ import logo from './logo.svg';
 // import DemoUseDebounceFn from '@components/hooksDemo/DemoUseDebounceFn';
 // import DemoUseLockFn from '@components/hooksDemo/DemoUseLockFn';
 import DemoForm from '@components/hooksDemo/DemoForm';
+import { useEffect, useState } from 'react';
 // import TestDemo from '@components/testDemo';
 // import DemoUseTimeout from '@components/hooksDemo/DemoUseTimeout';
 
 function App() {
+  const [count, setcount] = useState(-1);
+  useEffect(() => {
+    setcount(0);
+  }, []);
+  console.log('render');
   return (
     <div className="App">
+      {count}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Hello message={'hello world'} />
         <DemoHooks />
         <a
           className="App-link"

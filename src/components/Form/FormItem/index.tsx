@@ -1,6 +1,6 @@
 import useCreation from '@/hooks/useCreation';
 import FormContext from '@/hooks/useForm/FormContext';
-import type { IUpdateProps, IValidateRulePorps } from '@/hooks/useForm/types';
+import type { IUpdateProps, IValidateRuleProps } from '@/hooks/useForm/types';
 import useUpdate from '@/hooks/useUpdate';
 import { NeverAny } from '@/types';
 import {
@@ -21,7 +21,7 @@ export interface IFormItemProps {
   name: string;
   message?: string;
   required?: boolean;
-  rules?: IValidateRulePorps[];
+  rules?: IValidateRuleProps[];
   children?: ReactNode;
   [k: string]: NeverAny;
 }

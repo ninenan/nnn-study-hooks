@@ -7,6 +7,7 @@ import 'nnn-toy-ui/dist/index.css';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(<App />);
 
 // import React from 'react';
